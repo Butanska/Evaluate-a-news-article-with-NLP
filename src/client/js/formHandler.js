@@ -4,6 +4,8 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value
 
+    urlValidation(formText)
+
     console.log("::: Form Submitted :::")
     console.log(formText)
    
@@ -28,4 +30,5 @@ function handleSubmit(event) {
     })
 }
 
+import { urlValidation } from "./nameChecker";
 export { handleSubmit }
