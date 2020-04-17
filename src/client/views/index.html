@@ -17,26 +17,43 @@
                 Logo
             </div>
             <div class="">
-                navigation
+                <ul>
+                    <li>About</li>
+                    <li>Analysis</li>
+                </ul>
             </div>
         </header>
 
         <main>
             <section>
+                <div>
+                    <h2>About NLP</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ex dolore consectetur corporis rem maxime reiciendis iure dolorem voluptatum aut?</p>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Analyze your data</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tempora quam quia quasi sint, culpa iste facilis illum numquam magnam?</p>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Please, enter URL">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <h2>Content Analysis Results</h2>
+                <h3>Polarity:</h3>
+                <div id="polarity"></div>
+                <h3>Polarity Confidence:</h3>
+                <div id="polarityConfidence"></div>
+                <h3>Article Text:</h3>
+                <div id="articleTxt"></div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>Content analysis powered by <a href="https://aylien.com/" target="_blank">AYLIEN</a>.</p>
         </footer>
 
     </body>

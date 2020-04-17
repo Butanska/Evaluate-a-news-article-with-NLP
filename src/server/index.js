@@ -1,25 +1,61 @@
-var path = require('path')
-const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+const dotenv = require('dotenv');
+dotenv.config();
 
-const app = express()
+var path = require('path');
 
-app.use(express.static('dist'))
+// Require Express to run server and routes
+const express = require('express');
 
-// console.log(__dirname)
+// Start up an instance of app
+const app = express();
 
-console.log(JSON.stringify(mockAPIResponse))
+const bodyParser = require('body-parser');
 
+//Configure express to use body-parser as middle-ware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Cors for cross origin allowance
+const cors = require('cors');
+app.use(cors());
+
+//Require Aylien Text API
+var aylien = require("aylien_textapi");
+
+// set aylien API credentials
+var textapi = new aylien({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+    });
+
+// Initialize the dist folder
+app.use(express.static('dist'));
+
+//GET for displaying the dist/index.html
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-    // res.sendFile(path.resolve('src/client/views/index.html'))
+});
+
+// Setup empty JS object to act as endpoint for all routes
+let apiData = {}
+
+//Getting data from the Aylien API
+app.post('/test', function(req, res) {
+    let userInput = req.body.input.url;
+    textapi.sentiment({
+    'url': `${userInput}`,
+    mode: 'document'
+    }, function (error,response) {
+    if (error === null) {
+    console.log(response)
+    res.send(response)
+    }
+    })
 })
 
-// designates what port the app will listen to for incoming requests
+module.exports = apiData
+
+// Designate what port the app will listen to for incoming requests
 app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+    console.log('App listening on port 8081!')
+});
