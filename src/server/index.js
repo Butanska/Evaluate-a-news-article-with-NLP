@@ -36,9 +36,6 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 });
 
-// Setup empty JS object to act as endpoint for all routes
-let apiData = {}
-
 //Getting data from the Aylien API
 app.post('/test', function(req, res) {
     let userInput = req.body.input.url;
@@ -52,8 +49,6 @@ app.post('/test', function(req, res) {
     }
     })
 })
-
-module.exports = apiData
 
 // Designate what port the app will listen to for incoming requests
 app.listen(8081, function () {

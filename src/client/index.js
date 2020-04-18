@@ -1,4 +1,4 @@
-import { urlValidation } from './js/nameChecker'
+import { urlValidation } from './js/inputChecker'
 import { handleSubmit } from './js/formHandler'
 
 import './styles/resets.scss'

@@ -30,5 +30,5 @@ function handleSubmit(event) {
     })
 }
 
-import { urlValidation } from "./nameChecker";
+import { urlValidation } from "./inputChecker";
 export { handleSubmit }
