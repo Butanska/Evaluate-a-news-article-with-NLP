@@ -2,19 +2,18 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <title>Test</title>
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
+            <h1 id="logo"> <i class="fas fa-brain"></i>SentIntel</h1>
             <div class="">
                 <ul>
-                    <li>About</li>
-                    <li>Analysis</li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#analyze">Analysis</a></li>
                 </ul>
             </div>
         </header>
@@ -22,16 +21,17 @@
         <main>
             <section>
                 <div>
-                    <h2>About NLP</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ex dolore consectetur corporis rem maxime reiciendis iure dolorem voluptatum aut?</p>
+                    <h2 id="about">About Sentiment Analysis with NLP</h2>
+                    <p>As more and more content is created and shared online through social media, blogs, news outlets, etc. the need and desire for businesses to mine this information, in order to gain business insight from it, has also increased.
+                    <p> While in the past businesses had to rely on traditional formats like surveys to gain insight into their customers’ opinions, nowadays it is possible to extract meaning from text via Natural Language Processing.</p>
                 </div>
             </section>
             
             <section>
-                <h2>Analyze your data</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tempora quam quia quasi sint, culpa iste facilis illum numquam magnam?</p>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Please, enter URL">
+                <h2 id="analyze">Analyze your data</h2>
+                <p>If you would like to detect the sentiment of a document in terms of polarity and figure out if its tone is positive, negative or neutral, simply paste the URL to the article in the form below. </p>
+                <form id="form" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Please, enter URL">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
@@ -48,7 +48,7 @@
         </main>
 
         <footer>
-            <p>Content analysis powered by <a href="https://aylien.com/" target="_blank">AYLIEN</a>.</p>
+            <p>Sentiment analysis powered by <a href="https://aylien.com/" target="_blank">AYLIEN</a>.</p>
         </footer>
 
     </body>

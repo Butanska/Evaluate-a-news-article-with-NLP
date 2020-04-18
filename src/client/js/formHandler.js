@@ -28,6 +28,8 @@ function handleSubmit(event) {
         document.getElementById('polarityConfidence').innerHTML = res.polarity_confidence;
         document.getElementById('articleTxt').innerHTML = res.text;
     })
+
+    document.getElementById("form").reset()
 }
 
 import { urlValidation } from "./inputChecker";

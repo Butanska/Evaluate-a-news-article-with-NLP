@@ -1,5 +1,45 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 10px 20px;
+
+    h1 {
+        font-size: 2rem;
+        padding: 0.5rem 0;
+        color: #333;
+
+        .fa, .fas {
+            padding-right: 0.5rem;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        text-align: right;
+        color: #333;
+
+        li {
+            display: inline-block;
+            padding: 0.3rem;
+            font-weight: bold;
+    
+            a {
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: #333;
+
+                &:hover { 
+                    background: #333;
+                    color: #fff;
+                    transition: ease 0.3s all;
+                    padding: 0.8rem 1rem;
+                    border-radius: 5px;
+                }
+              }
+          }
+    }
+
+    
+      
 }
